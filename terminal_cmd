@@ -1,0 +1,13 @@
+python3 -m venv .dash  
+source .dash/bin/activate
+echo .dash/ > .gitignore 
+mkdir frombook 
+cd frombook
+git clone https://github.com/PacktPublishing/Interactive-Dashboards-and-Data-Apps-with-Plotly-and-Dash.git
+echo frombook/ >> .gitignore
+pip install --upgrade pip
+source .dash/bin/activate
+pip install -r requirements.txt
+pip insatll jupyter 
+pip insatll jupyterlab
+jupyter labextension install jupyterlab-plotly

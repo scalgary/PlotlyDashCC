@@ -51,4 +51,36 @@ def drawText():
     ])
 
 # Data
-df = px.data.iris()
+
+
+def justfigure():
+    df = pd.DataFrame({
+    "Fruit": ["Apples", "Oranges", "Bananas", "Apples", "Oranges", "Bananas"],
+    "Amount": [4, 1, 2, 2, 4, 5],
+    "City": ["SF", "SF", "SF", "Montreal", "Montreal", "Montreal"]
+})
+    return  html.Div([
+        dbc.Card(
+            dbc.CardBody([
+                dcc.Graph(
+                    figure= px.bar(df, x="Fruit", y="Amount", color="City", barmode="group")
+                )
+            ])
+    ),  
+    ],)
+
+
+
+def emptyfigure():
+    df = pd.DataFrame({
+    "Fruit": ["Apples", "Oranges", "Bananas", "Apples", "Oranges", "Bananas"],
+    "Amount": [4, 1, 2, 2, 4, 5],
+    "City": ["SF", "SF", "SF", "Montreal", "Montreal", "Montreal"]
+})
+    return  html.Div([
+        dbc.Card(
+            dbc.CardBody([]),style={'borderColor': "green"}),])
+    
+
+
+#style={'backgroundColor': "blue"}

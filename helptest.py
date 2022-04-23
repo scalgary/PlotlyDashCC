@@ -1,7 +1,7 @@
 
 import plotly.express as px
 import dash
-
+import plotly.graph_objects as go
 
 import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output
@@ -11,7 +11,6 @@ from dash import Dash, html, dcc
 import pandas as pd
 
 # Iris bar figure
-
 # Data
 df = px.data.iris()
 def drawFigure():
@@ -25,7 +24,12 @@ def drawFigure():
                         template='plotly_dark',
                         plot_bgcolor= 'rgba(0, 0, 0, 0)',
                         paper_bgcolor= 'rgba(0, 0, 0, 0)',
-                    ),
+                        margin=go.layout.Margin(
+                        l=0, #left margin
+                        r=0, #right margin
+                        b=0, #bottom margin
+                        t=0, #top margin
+                    )),
                     config={
                         'displayModeBar': False
                     }
